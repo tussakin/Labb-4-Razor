@@ -1,0 +1,37 @@
+@model Labb4Razor.Models.Loan
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Loan</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LoanId" class="control-label"></label>
+                <input asp-for="LoanId" class="form-control" />
+                <span asp-validation-for="LoanId" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="FkCustomerId" />
+            <input type="hidden" asp-for="FkBookId" />
+            <div class="form-group">
+                <label asp-for="LoanStatus" class="control-label"></label>
+                <select asp-for="LoanStatus" class="form-control"></select>
+                <span asp-validation-for="LoanStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
